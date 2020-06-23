@@ -6,7 +6,7 @@ const studentsRoutes = require("./services")
 const server = express()
 
 server.use(express.json())
-server.use("/services", studentsRoutes)
+server.use("/Students", studentsRoutes)
 
 
 
