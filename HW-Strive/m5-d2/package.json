@@ -1,0 +1,25 @@
+{
+  "name": "strive-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hammad-87/Strive-Backend.git"
+  },
+  "author": "Hammad Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hammad-87/Strive-Backend/issues"
+  },
+  "homepage": "https://github.com/Hammad-87/Strive-Backend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "uniqid": "^5.2.0"
+  }
+}
