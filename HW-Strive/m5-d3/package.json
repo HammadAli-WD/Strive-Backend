@@ -1,0 +1,23 @@
+{
+  "name": "m5-d3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect -r dotenv/config ./src/server.js"
+  },
+  "author": "Hammad Ali",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-list-endpoints": "^4.0.1",
+    "express-validator": "^6.6.0",
+    "fs": "0.0.1-security",
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "uniqid": "^5.2.0"
+  }
+}

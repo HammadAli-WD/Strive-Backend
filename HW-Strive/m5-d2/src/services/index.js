@@ -40,6 +40,11 @@ router.post("/", (request, response) => {
 
     const fileContentAsBuffer = fs.readFileSync(studentsFilePath)
     const studentsArray = JSON.parse(fileContentAsBuffer.toString())
+    students.find({'email':email}, function(err,user){
+        if (students.length!==0) {
+            console.log('Email already exist, email:' + email)
+        }
+    })
 
     studentsArray.push(newStudent)
     fs.writeFileSync(studentsFilePath,JSON.stringify(studentsArray))
