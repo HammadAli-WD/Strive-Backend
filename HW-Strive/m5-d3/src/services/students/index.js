@@ -1,9 +1,13 @@
 const express = require("express");
-const fs = require("fs");
+const fs = require("fs-extra");
 const path = require("path");
 const _ = require("lodash");
 const uniqid = require("uniqid");
 const router = express.Router();
+const multer = require("multer")
+
+const upload = multer({})
+const studentsFolderPath = path.join(__dirname, "./photos")
 
 const fileDirectory = path.join(__dirname, "students.json");
 router.get("/", (req, resp) => {
@@ -39,6 +43,24 @@ router.post("/", (req, res) => {
     res.status(201).send();
   }
 });
+
+router.post("/:id/uploadphoto", upload.array("multipleAvatar"),
+async(req, res, next) => {
+  try {
+    const arrayofPromises = req.files.map((file) =>
+    fs.writeFile(path.join(studentsFolderPath, file.originalname), file.buffer)
+    )
+    await Promise.all(arrayofPromises)
+    res.send("OK")
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+
+
+
+
 router.put("/:id", (req, res) => {
   const query = req.params.id;
   const fileContent = fs.readFileSync(fileDirectory);
