@@ -1,6 +1,7 @@
 const express = require("express")
 const listEndpoints = require("express-list-endpoints")
 const projectsRouter = require("./services/projects")
+const reviewRouter = require("./services/reviews")
 //const moviesRouter = require("./services/movies")
 //const problematicRoutes = require("./services/problematicRoutes")
 const {
@@ -24,6 +25,7 @@ server.use(loggerMiddleware)
 
 // ROUTES
 server.use("/projects", projectsRouter)
+server.use("/reviews", reviewRouter)
 //server.use("/movies", moviesRouter)
 //server.use("/problems", problematicRoutes)
 
